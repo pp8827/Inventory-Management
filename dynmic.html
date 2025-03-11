@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form with Bootstrap</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center mb-4 width-20px">
+            <div class="col-md-4 d-flex justify-content-center">
+
+            <div class="col-md-8 d-flex gap-3">
+                <select id="formSelect" class="form-select" style="width: 100%;">
+                    <option selected>Choose the option</option>
+                    <option value="quarterlyForm">Quarterly</option>
+                    <option value="halfYearlyForm">Half-Yearly</option>
+                    <option value="annualForm">Annual</option>
+                </select>
+                
+            </div>
+            </div>
+        </div>
+
+        <div id="allForms">
+            <!-- Reusable Form Section -->
+            <div id="quarterlyForm" class="form-section card p-4 shadow rounded" style="display:none;">
+                <h4 class="text-center mb-4">Quarterly Form</h4>
+                <form class="row g-4">
+                    <div class="col-md-4">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control form-control-sm" name="firstName">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control form-control-sm" name="lastName">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Number</label>
+                        <input type="number" class="form-control form-control-sm" name="number">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control form-control-sm" name="email">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Gender</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="male" checked>
+                            <label class="form-check-label">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="female">
+                            <label class="form-check-label">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="other">
+                            <label class="form-check-label">Other</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control form-control-sm" placeholder="Please write a short note"name="message"></textarea>
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Half-Yearly Form -->
+            <div id="halfYearlyForm" class="form-section card p-4 shadow rounded" style="display:none;">
+                <h4 class="text-center mb-4">Half-Yearly Form</h4>
+                <form class="row g-4">
+                    <div class="col-md-4">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control form-control-sm"  name="firstName">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control form-control-sm"name="lastName">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Number</label>
+                        <input type="number" class="form-control form-control-sm" name="number">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control form-control-sm" name="email">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Gender</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="male" checked>
+                            <label class="form-check-label">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="female">
+                            <label class="form-check-label">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="other">
+                            <label class="form-check-label">Other</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control form-control-sm" placeholder="Please write a short note" name="message" ></textarea>
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Annual Form -->
+            <div id="annualForm" class="form-section card p-4 shadow rounded" style="display:none;">
+                <h4 class="text-center mb-4">Annual Form</h4>
+                <form class="row g-4">
+                    <div class="col-md-4">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control form-control-sm" name="firstName">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control form-control-sm" name="lastName">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Number</label>
+                        <input type="number" class="form-control form-control-sm" name="number">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control form-control-sm" name="email">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Gender</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="male" checked>
+                            <label class="form-check-label">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="female">
+                            <label class="form-check-label">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="other">
+                            <label class="form-check-label">Other</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control form-control-sm" placeholder="Please write a short note" name="message"></textarea>
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-bordered text-center mt-auto">
+        <thead class="table-dark" >
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>textarea</th>
+            </tr>
+        </thead>
+        <tbody id="dataGridBody">
+
+        </tbody>
+    </table>
+    
+
+<script>
+const formSelect = document.getElementById('formSelect');
+const quarterlyForm = document.getElementById('quarterlyForm');
+const annualForm = document.getElementById('annualForm');
+const halfYearlyForm = document.getElementById('halfYearlyForm');
+const dataGridBody = document.getElementById('dataGridBody');
+
+function hideAllForms() {
+    quarterlyForm.style.display = 'none';
+    annualForm.style.display = 'none';
+    halfYearlyForm.style.display = 'none';
+}
+
+hideAllForms();
+
+formSelect.addEventListener('change', () => {
+    hideAllForms();
+    const selectedValue = formSelect.value;
+    if (selectedValue === 'quarterlyForm') {
+        quarterlyForm.style.display = 'block';
+    } else if (selectedValue === 'annualForm') {
+        annualForm.style.display = 'block';
+    } else if (selectedValue === 'halfYearlyForm') {
+        halfYearlyForm.style.display = 'block';
+    }
+});
+
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        let isValid = true;  
+
+        const formData = new FormData(form);
+        const formDataObj = Object.fromEntries(formData.entries());
+
+        const firstName = form.querySelector('input[name="firstName"]');
+        const lastName = form.querySelector('input[name="lastName"]');
+        const number = form.querySelector('input[name="number"]');
+        const email = form.querySelector('input[name="email"]');
+        const gender = form.querySelector('input[name="gender"]:checked');
+        const message = form.querySelector('textarea[name="message"]');
+
+        if (!formDataObj.firstName.trim()) {
+            showError(firstName, "First Name is required");
+            isValid = false;
+        } else {
+            removeError(firstName);
+        }
+
+        if (!formDataObj.lastName.trim()) {
+            showError(lastName, "Last Name is required");
+            isValid = false;
+        } else {
+            removeError(lastName);
+        }
+
+        if (!formDataObj.number.trim() || isNaN(formDataObj.number)) {
+            showError(number, "Enter a valid number");
+            isValid = false;
+        } else {
+            removeError(number);
+        }
+
+        if (!formDataObj.email.trim() || !/\S+@\S+\.\S+/.test(formDataObj.email)) {
+            showError(email, "Enter a valid email");
+            isValid = false;
+        } else {
+            removeError(email);
+        }
+
+        if (!gender) {
+            alert("Please select a gender");
+            isValid = false;
+        }
+
+        if (!formDataObj.message.trim()) {
+            showError(message, "Message cannot be empty");
+            isValid = false;
+        } else {
+            removeError(message);
+        }
+
+        if (!isValid) return;
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${formDataObj.firstName}</td>
+            <td>${formDataObj.lastName}</td>
+            <td>${formDataObj.email}</td>
+            <td>${formDataObj.gender}</td>
+            <td>${formDataObj.message}</td>
+        `;
+        dataGridBody.appendChild(row);
+
+        form.reset();  
+    });
+});
+
+
+function showError(input, message) {
+    let errorDiv = input.nextElementSibling;
+    if (!errorDiv || !errorDiv.classList.contains("error-message")) {
+        errorDiv = document.createElement("div");
+        errorDiv.classList.add("error-message");
+        errorDiv.style.color = "red";
+        errorDiv.style.fontSize = "12px";
+        input.parentNode.appendChild(errorDiv);
+    }
+    errorDiv.innerText = message;
+}
+
+function removeError(input) {
+    let errorDiv = input.nextElementSibling;
+    if (errorDiv && errorDiv.classList.contains("error-message")) {
+        errorDiv.remove();
+    }
+}
+</script>

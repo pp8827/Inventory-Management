@@ -1,0 +1,42 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px 20px;
+    box-shadow: 0 2px 5px rgba(171, 108, 108, 0.1);
+  }
+  
+  .inventory {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  #header {
+    display: flex;
+    gap: 20px;
+  }
+  
+  #header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 5px;
+  }
+  
+  #header ul li {
+    display: inline-block;
+  }
+  
+  #header ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 100px 35px;
+  }
+  
+  #header ul li a:hover {
+    color: blue;
+  }
+  .bg-white {
+    background-color: #f8f9fa !important; 
+}

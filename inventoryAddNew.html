@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Vendor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+    <h2 class="text-center">Add New Vendor</h2>
+    <form id="vendorForm" class="mb-4">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Vendor Name</label>
+                <input type="text" id="vendorName" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Address</label>
+                <input type="text" id="address" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Quantity</label>
+                <input type="number" id="quantity" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Billing (₹)</label>
+                <input type="number" id="billing" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Date of Sale</label>
+                <input type="datetime-local" id="dateOfSale" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Category</label>
+                <input type="text" id="category" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Product Name</label>
+                <input type="text" id="productName" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Product Price (₹)</label>
+                <input type="number" id="productPrice" class="form-control" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Vendor</button>
+    </form>
+
+    <h2 class="text-center">All Vendors</h2>
+    <table class="table table-bordered">
+        <thead class="table-success">
+            <tr>
+                <th>ID</th>
+                <th>Vendor Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Quantity</th>
+                <th>Billing (₹)</th>
+                <th>Date of Sale</th>
+                <th>Category</th>
+                <th>Product Name</th>
+                <th>Product Price (₹)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="vendorTableBody"></tbody>
+    </table>
+
+    <script>
+        let vendorId = 1;
+        document.getElementById('vendorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let tableBody = document.getElementById('vendorTableBody');
+            let row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${vendorId++}</td>
+                <td>${document.getElementById('vendorName').value}</td>
+                <td>${document.getElementById('email').value}</td>
+                <td>${document.getElementById('address').value}</td>
+                <td>${document.getElementById('quantity').value}</td>
+                <td>₹${document.getElementById('billing').value}</td>
+                <td>${document.getElementById('dateOfSale').value}</td>
+                <td>${document.getElementById('category').value}</td>
+                <td>${document.getElementById('productName').value}</td>
+                <td>₹${document.getElementById('productPrice').value}</td>
+                <td>
+                    <button class='btn btn-primary btn-sm'>Edit</button>
+                    <button class='btn btn-danger btn-sm' onclick='deleteRow(this)'>Delete</button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+            
+            document.getElementById('vendorForm').reset();
+        });
+        
+        function deleteRow(button) {
+            button.parentElement.parentElement.remove();
+        }
+    </script>
+</body>
+</html>
